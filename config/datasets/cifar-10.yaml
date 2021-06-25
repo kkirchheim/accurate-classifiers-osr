@@ -1,0 +1,71 @@
+# Default values for training and evaluating on the Cifar10 dataset
+# Learning rate, weight decay, scheduler and no. epochs taken from https://github.com/kuangliu/pytorch-cifar
+optimizer:
+  name: sgd
+  learning_rate: 0.01
+  weight_decay: 5e-4
+  momentum: 0.9
+
+# From https://github.com/kuangliu/pytorch-cifar
+scheduler:
+  name: CosineAnnealingLR
+  T_max: 200
+
+# From https://github.com/kuangliu/pytorch-cifar
+training:
+  epochs: 200
+  workers: 10
+  batch_size: 128
+
+# evaluation is dataset-specific
+evaluation:
+  workers: 10
+  batch_size: 256
+  datasets:
+    - svhn
+    - noise-gauss
+    - noise-uniform
+
+# transformer configuration
+transform:
+  - resized-crop:
+      size: [32, 32]
+      scale: [0.7, 1.0]
+  - resize:
+      size: [32, 32]
+  - to-tensor:
+  - img-normalize:
+      size: [32, 32]
+  - hflip:
+      p: 0
+  - vflip:
+      p: 0
+  - rotate:
+      degrees: 0
+
+
+# override config for datasets
+tool:
+  datasets:
+    noise-gauss:
+      size: [32,32,3]
+    noise-uniform:
+      size: [32,32,3]
+
+
+# open set simulation settings
+ossim:
+  dataset:
+    name: "cifar-10"
+  split:
+    samples:
+      train: 0.7
+      val: 0.2
+      test: 0.1
+    # class split
+    classes:
+      kk: 6
+      ku: 0 # no known unknown classes
+      uu:
+        val: 2
+        test: 2

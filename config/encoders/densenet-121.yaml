@@ -1,0 +1,8 @@
+architecture:
+  encoder:
+    name: densenet-121
+    n_features: 1024  # the number of features depends on the number of blocks and the growth rate
+    in_channels: 3
+    dropout: 0.0
+    # nblocks: [6, 12, 24, 16]
+    # growth_rate: 8

@@ -1,0 +1,5 @@
+import:
+- "../../encoders/lenet-5.yaml"
+- "../../datasets/svhn.yaml"
+- "../../models/ceb.yaml"
+- "../ceb-mods.yaml"

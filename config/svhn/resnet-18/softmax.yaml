@@ -1,0 +1,4 @@
+import:
+- "../../encoders/resnet-18.yaml"
+- "../../datasets/svhn.yaml"
+- "../../models/softmax.yaml"

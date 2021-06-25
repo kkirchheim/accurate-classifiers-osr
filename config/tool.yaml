@@ -1,0 +1,64 @@
+seed: 0 # default seed
+gpus: 1 # use gpu by default
+
+tool:
+  paths:
+    output: data/experiments/
+    raytune: data/raytune/
+    external: data/external/
+
+  datasets:
+    # some configurations for datasets.
+    # will be passed as arguments upon creation in the factory.
+    mnist:
+      name: mnist
+      root: ${tool.paths.external}
+    kmnist:
+      name: kmnist
+      root: ${tool.paths.external}
+    fmnist:
+      name: fmnist
+      root: ${tool.paths.external}
+    cifar-10:
+      name: cifar-10
+      root: ${tool.paths.external}/cifar-10
+    cifar-100:
+      name: cifar-100
+      root: ${tool.paths.external}/cifar-100
+    casia:
+      name: casia
+      root: ${tool.paths.external}/casia
+    newsgroup-20:
+      name: newsgroup-20
+      root: ${tool.paths.external}/newsgroup-20
+    reuters-52:
+      name: reuters-52
+      root: ${tool.paths.external}/reuters-52
+    svhn:
+      name: svhn
+      root: ${tool.paths.external}/svhn
+    tiny-imagenet:
+      name: tiny-imagenet
+      root: ${tool.paths.external}/tiny-imagenet-200/
+    cub-200:
+      name: cub-200
+      root: ${tool.paths.external}/cub-200/
+    stanford-cars:
+      name: stanford-cars
+      root: data/external/
+    imagenet-2012:
+      name: imagenet-2012
+      root: ${tool.paths.external}/imagenet-2012
+    imagenet-2012-64x64:
+      # downscaled version of the imagenet dataset. basically a large version of the
+      # tiny-imagenet
+      name: imagenet-2012-64-64
+      root: ${tool.paths.external}/imagenet-2012-64x64
+    noise-gauss:
+      name: noise-uniform
+      num: 1000
+    noise-uniform:
+      name: noise-gauss
+      num: 1000
+
+

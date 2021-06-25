@@ -1,0 +1,25 @@
+# default configuration for softmax models
+architecture:
+  name: softmax
+  dropout: 0.2
+  callbacks:
+    temperature:
+      t: 1000
+      val: False # deactivate during validation
+      test: True # activate for tests
+    mcd:
+      rounds: 30
+      val: False # deactivate during validation
+      test: True # activate for tests
+    openmax:
+      tailsize: 25
+      alpha: 3
+      euclid_weight: 0.0
+      val: False  # deactivate during validation
+      test: True  # activate for tests
+    odin:
+      t: 1000
+      eps: 0.002
+      val: False  # deactivate during validation
+      test: True  # activate for tests
+

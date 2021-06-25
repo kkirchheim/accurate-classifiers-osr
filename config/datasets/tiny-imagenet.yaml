@@ -1,0 +1,70 @@
+# Defaults for training on the TinyImagenet dataset
+optimizer:
+  name: sgd
+  learning_rate: 0.01
+  weight_decay: 5e-4
+  momentum: 0.9
+
+scheduler:
+  name: CosineAnnealingLR
+  T_max: 200
+
+transform:
+  - resized-crop:
+      size: [64, 64]
+      scale: [0.7, 1.0]
+  - resize:
+      size: [64, 64]
+  - to-tensor:
+  - img-normalize:
+      size: [64, 64]
+  - hflip:
+      p: 0.5
+  - vflip:
+      p: 0
+  - rotate:
+      degrees: 20
+
+training:
+  epochs: 200
+  workers: 10
+  batch_size: 128
+  resume: null
+
+evaluation:
+  workers: 10
+  batch_size: 64 # reduced, so workers with less v-ram will not go OOM
+  datasets:
+    - noise-gauss
+    - noise-uniform
+
+# override config for datasets
+tool:
+  datasets:
+    noise-gauss:
+      size:
+      - 64
+      - 64
+      - 3
+    noise-uniform:
+      size:
+      - 64
+      - 64
+      - 3
+
+# open set simulation settings
+ossim:
+  dataset:
+    name: "tiny-imagenet"
+  split:
+    samples:
+      train: 0.7
+      val: 0.2
+      test: 0.1
+    # class split
+    classes:
+      kk: 100
+      ku: 0 # no known unknown classes
+      uu:
+        val: 50
+        test: 50

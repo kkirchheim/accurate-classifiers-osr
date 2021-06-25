@@ -1,0 +1,4 @@
+import:
+- "../../encoders/lenet-5.yaml"
+- "../../datasets/tiny-imagenet.yaml"
+- "../../models/softmax.yaml"

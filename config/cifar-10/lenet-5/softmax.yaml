@@ -1,0 +1,5 @@
+import:
+  - "../../encoders/lenet-5.yaml"
+  - "../../datasets/cifar-10.yaml"
+  - "../../models/softmax.yaml"
+

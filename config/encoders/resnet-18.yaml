@@ -1,0 +1,6 @@
+architecture:
+  encoder:
+    name: resnet-18
+    freeze: False
+    pretrained: False
+

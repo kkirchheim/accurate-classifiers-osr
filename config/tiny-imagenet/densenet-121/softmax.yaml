@@ -1,0 +1,11 @@
+import:
+- "../../encoders/densenet-121.yaml"
+- "../../datasets/tiny-imagenet.yaml"
+- "../../models/softmax.yaml"
+
+architecture:
+  odin:
+    # hyper parameter optimization for odin on 15.03.2020
+    # using densenet on tiny-imagenet
+    eps: 0.0011
+    temperature: 1000
