@@ -16,11 +16,8 @@ echo "Loading helpers"
 source "$SCRIPT_PATH/helpers.sh"
 
 
-################################################
-# run on image data
-################################################
 echo "Processing Image Data"
-IMAGE_MODEL="softmax" # ceb
+IMAGE_MODEL="softmax"
 IMAGE_DATASETS="tiny-imagenet cifar-10 cifar-100 svhn"
 IMAGE_ENCODERS="densenet-121 lenet-5 resnet-18 resnet-50"
 

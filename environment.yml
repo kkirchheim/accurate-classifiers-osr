@@ -1,4 +1,4 @@
-name: osr-3.8
+name: acc-osr
 channels:
   - pytorch
   - conda-forge
@@ -193,7 +193,7 @@ dependencies:
     - psutil==5.7.2
     - py-spy==0.3.3
     - pyasn1-modules==0.2.8
-    - pytorch-lightning==0.10.0
+    - pytorch-lightning==1.1.5
     - ray==1.0.0
     - redis==3.4.1
     - requests==2.24.0
